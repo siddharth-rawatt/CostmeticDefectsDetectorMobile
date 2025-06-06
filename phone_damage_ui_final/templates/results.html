@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>📱 Mobile Phone Damage Insurance Report</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url('/static/images/bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.78);
+      margin: 50px auto;
+      padding: 35px;
+      border-radius: 12px;
+      max-width: 1200px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      text-align: center;
+      color: #0056b3;
+    }
+
+    .images {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 30px 0;
+    }
+
+    .images div {
+      text-align: center;
+    }
+
+    .images img {
+      height: 200px;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease;
+    }
+
+    .images img:hover {
+      transform: scale(1.05);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 50px;
+      margin-bottom: 50px;
+
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #007bff;
+      color: white;
+    }
+
+    td {
+      background-color: #f9f9f9;
+    }
+
+    .final-grade {
+      font-weight: bold;
+      color: red;
+    }
+
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 14px;
+      color: #000;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px white;
+    }
+
+    .modal:target {
+      display: flex;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Mobile Phone Damage Insurance Report</h1>
+
+    <div class="images">
+      <div>
+        <img src="/static/images/Detected_Images_Yolo/highlighted_IMG_0001_Back.jpg" alt="Back View" onclick="openModal(this.src)">
+        <p>Back View</p>
+      </div>
+      <div>
+        <img src="/static/images/Detected_Images_Yolo/highlighted_IMG_0001_Front.jpg" alt="Front View" onclick="openModal(this.src)">
+        <p>Front View</p>
+      </div>
+    </div>
+
+    <h2>Condition Summary Report</h2>
+    <table>
+      <tr>
+        {% for col in data[0].keys() %}
+          <th>{{ col }}</th>
+        {% endfor %}
+      </tr>
+      {% for row in data %}
+        <tr>
+          {% for col in row.values() %}
+            <td class="{{ 'final-grade' if loop.index == loop.length and col == 'C' else '' }}">{{ col }}</td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" onclick="closeModal()">
+    <span class="close-btn">&times;</span>
+    <img id="modal-img" src="">
+  </div>
+
+  <div class="footer">
+    © 2025 MobileClaim Assist • Secure | Smart | Fast
+  </div>
+
+  <script>
+    function openModal(src) {
+      document.getElementById('modal-img').src = src;
+      document.getElementById('modal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
