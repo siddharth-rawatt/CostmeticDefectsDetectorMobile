@@ -68,3 +68,25 @@ README.md # Project overview and setup instructions
 - Modular and user-friendly for logistics or insurance staff.
 
 ---
+
+Model Files Setup
+Due to file size limitations, the following model files are not included in this GitHub repository:
+1.⁠ ⁠phone_segmentation.pt 
+2.⁠ ⁠scratch_detection.pt 
+3.⁠ ⁠surface_segmentation.pt 
+
+
+How to download
+Download all three model files from the shared Google Drive folder.
+
+Placement Instructions
+Once downloaded, create a folder model and place the files exactly as shown below in the model/ directory:
+
+mobile_defect_detection/
+├── model/
+│   ├── phone_segmentation.pt      
+│   ├── scratch_detection.pt      
+│   └── surface_segmentation.pt
+
+
+---
