@@ -1,7 +1,9 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_file
 import pandas as pd
 import os
 import subprocess
+from xhtml2pdf import pisa 
+from io import BytesIO
 
 app = Flask(__name__)
 
@@ -31,6 +33,19 @@ def run_model_and_display():
         data=data,
         images=images
     )
+
+@app.route('/download-pdf')
+def download_pdf():
+    # Load data from CSV
+    csv_path = os.path.join("csv", "final_phone_grades.csv")
+    df = pd.read_csv(csv_path)
+    rendered = render_template("pdf_template.html", data=df.to_dict(orient='records'))
+
+    pdf = BytesIO()
+    pisa.CreatePDF(BytesIO(rendered.encode("utf-8")), dest=pdf)
+    pdf.seek(0)
+    return send_file(pdf, download_name="phone_damage_report.pdf", as_attachment=True)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mobile Damage Report</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      color: #333;
+      background: #fff;
+    }
+
+    h1 {
+      text-align: center;
+      color: #1a1a1a;
+    }
+
+    .images {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin: 40px 0;
+    }
+
+    .images div {
+      text-align: center;
+    }
+
+    .images img {
+      height: 200px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+    }
+
+    th, td {
+      border: 1px solid #aaa;
+      padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #eee;
+    }
+
+    .grade-C {
+      color: red;
+      font-weight: bold;
+    }
+
+    .download-btn {
+      display: block;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .download-btn a {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mobile Phone Damage Report</h1>
+
+  <div class="images">
+    <div>
+      <img src="{{ url_for('static', filename='images/Detected_Images_Yolo/highlighted_IMG_0001_Front.jpg', _external=True) }}">
+      <p>Front View</p>
+    </div>
+    <div>
+      <img src="{{ url_for('static', filename='images/Detected_Images_Yolo/highlighted_IMG_0001_Back.jpg', _external=True) }}">
+      <p>Back View</p>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        {% for col in data[0].keys() %}
+          <th>{{ col }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in data %}
+        <tr>
+          {% for val in row.values() %}
+            <td class="{{ 'grade-C' if val == 'C' else '' }}">{{ val }}</td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>
