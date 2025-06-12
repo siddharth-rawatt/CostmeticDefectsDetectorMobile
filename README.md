@@ -28,7 +28,7 @@ notebook # Development notebooks for training, testing
 output # Final outputs and visualizations
 output_synthetic_imgaes_flip # Flipped synthetic image augmentation
 output_synthetic_imgaes_smudges # Smudge-specific synthetic outputs
-phone_damage_ui_final # Final UI components and Flask app
+mobile_defect_detection # Final UI components and Flask app
 src # Core source code and detection pipeline
 model # Trained model weights (YOLO, classifiers, etc.)
 venv # Python virtual environment
