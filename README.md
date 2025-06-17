@@ -111,7 +111,9 @@ mobile_defect_detection/
 ### Running the Application
 
 Navigate to the Flask application directory:
+
 cd mobile_defect_detection
+
 python app.py
 
 Once the server is running, open your browser and visit: http://127.0.0.1:5000/
