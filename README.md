@@ -90,3 +90,37 @@ mobile_defect_detection/
 
 
 ---
+
+Run/setup instructions to make the project executable
+
+Create a conda environment
+
+Install Python Requirements
+pip install -r requirements.txt
+
+ Run the Application
+python app.py
+
+
+Running on http://127.0.0.1:5000/
+
+
+
+Using the App
+Open your browser and go to: http://127.0.0.1:5000
+
+The system will automatically:
+
+Analyze the images
+
+Highlight defects
+
+Generate CSV and PDF reports
+
+You'll see:
+
+Images with detected damages
+
+A full report in table format
+
+A button to download the PDF report

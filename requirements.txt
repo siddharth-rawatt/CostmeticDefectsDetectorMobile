@@ -1,4 +1,39 @@
+# Data processing
 pandas
 numpy
 seaborn
+
+# Web application framework
+Flask
+
+# Computer vision
+opencv-python
+Pillow
+scikit-image
+
+# YOLO and object detection
+ultralytics  # includes YOLOv5/v8 via the Ultralytics package
+torch
+torchvision
+
+# Optional 3D reconstruction support
+# COLMAP is not installable via pip, but dependencies are included here
+pycolmap  # Python wrapper (if supported in your environment)
+gdown  # for downloading COLMAP models from Google Drive
+imageio
+pyntcloud  # point cloud manipulation
+open3d
+
+# Visualization
+matplotlib
+plotly
+
+# PDF/report generation
+xhtml2pdf
+
+# Utility tools
+tqdm
+requests
+
+# Local development package
 -e .
