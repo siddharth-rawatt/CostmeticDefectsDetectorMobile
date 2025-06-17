@@ -73,8 +73,10 @@ This project was developed as part of the Data Science Postgraduate Project (COS
 ### Step 1: Clone the Repository
 
 In the bash/terminal
+
 git clone https://github.com/siddharth-rawatt/CostmeticDefectsDetectorMobile
-cd <project-folder>
+
+cd CostmeticDefectsDetectorMobile
 
 ### Step 2: Create and Activate a Virtual Environment
 Using Python venv:
