@@ -54,7 +54,7 @@ This project was developed as part of the Data Science Postgraduate Project (COS
 |------------------------------------|-------------|
 | `3d model creator/`                | Experiments for 3D reconstruction testing |
 | `Image Upscaler/`                  | Scripts and notebooks for image enhancement |
-| `notebook/`                        | Jupyter notebooks for model testing and analysis |
+| `notebook/`                        | Jupyter notebooks for model testing 3d modelling, synthetic dataset and analysis  |
 | `output/`                          | Processed and annotated image results |
 | `output_synthetic_imgaes_flip/`    | Horizontally flipped image augmentations |
 | `output_synthetic_imgaes_smudges/` | Synthetic smudge-focused image set |
